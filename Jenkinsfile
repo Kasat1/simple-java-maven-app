@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Create_Archive') { 
             steps {
-                sh 'tar czf target/my-app.tar.gz target/my-app-1.0-SNAPSHOT.jar' 
+                sh 'tar czf target/my-app-$BUILD_NUMBER.tar.gz target/my-app-1.0-SNAPSHOT.jar' 
             }
         }
 //         stage('Test') {
