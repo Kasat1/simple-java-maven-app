@@ -1,11 +1,3 @@
-import static io.wcm.devops.jenkins.pipeline.utils.ConfigConstants.*
-
-checkoutScm( 
-    (SCM): [
-        (SCM_USE_SCM_VAR): true
-    ]
-)
-
 pipeline {
     agent {
         docker {
