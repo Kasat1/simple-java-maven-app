@@ -11,7 +11,7 @@ pipeline {
     stages {
 //         stage('Build') {
 //             steps {
-//                 sh 'mvn -B -DskipTests clean package'
+//                 sh 'tar xvzf target/my-app-$BUILD_NUMBER.tar.gz'
 //             }
 //         }
         stage('Test') {
