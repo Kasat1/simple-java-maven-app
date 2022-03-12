@@ -14,6 +14,11 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('Create_Archive') { 
+            steps {
+                sh 'tar czf my-app.tar.gz my-app-1.0-SNAPSHOT.jar 
+            }
+        }
 //         stage('Test') {
 //             steps {
 //                 sh 'mvn test'
@@ -24,10 +29,5 @@ pipeline {
 //                 }
 //             }
 //         }
-        stage('Create_Archive') { 
-            steps {
-                sh 'tar czf my-app.tar.gz my-app-1.0-SNAPSHOT.jar 
-            }
-        }
     }
 }
