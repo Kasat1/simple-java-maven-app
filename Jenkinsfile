@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Create_Archive') { 
             steps {
-                sh 'tar czf my-app.tar.gz my-app-1.0-SNAPSHOT.jar 
+                sh 'tar czf my-app.tar.gz my-app-1.0-SNAPSHOT.jar' 
             }
         }
 //         stage('Test') {
