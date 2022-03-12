@@ -24,10 +24,10 @@ pipeline {
 //                 }
 //             }
 //         }
-//         stage('Deliver') { 
-//             steps {
-//                 sh './jenkins/scripts/deliver.sh' 
-//             }
-//         }
+        stage('Create_Archive') { 
+            steps {
+                sh 'tar czf my-app.tar.gz my-app-1.0-SNAPSHOT.jar 
+            }
+        }
     }
 }
