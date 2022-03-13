@@ -11,8 +11,8 @@ pipeline {
      stages {
         stage('Unpack') {
             steps {
-                sh 'echo $Temp'
-                sh 'tar xvzf $J_HOME/artifacts/my-app-37.tar.gz --directory $J_HOME/artifacts/'
+//                 sh 'echo $Temp'
+                sh 'tar xvzf $J_HOME/artifacts/my-app-$Temp.tar.gz --directory $J_HOME/artifacts/'
             }
         }
 //         stage('Test') {
