@@ -30,10 +30,10 @@ pipeline {
                 sh 'java -jar $J_HOME/artifacts/target/my-app-1.0-SNAPSHOT.jar' 
             }
         }
-//         stage('Email') { 
-//             steps {
-//               emailext body: 'The Result is GOOD =)', subject: 'FROM JENKINS', to: 'kasatka5507@yandex.ru'   
-//             }
-//         }
+        stage('Email') { 
+            steps {
+              emailext body: 'The Result is GOOD =)', subject: 'FROM JENKINS', to: 'kasatka5507@yandex.ru'   
+            }
+        }
     }
 }
