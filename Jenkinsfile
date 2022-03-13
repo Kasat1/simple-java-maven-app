@@ -9,7 +9,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build') {
+        stage('Build_jar_file') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
@@ -19,15 +19,5 @@ pipeline {
                 sh 'tar czf target/my-app-$build_number_auto.tar.gz target/my-app-1.0-SNAPSHOT.jar' 
             }
         }
-//         stage('Test') {
-//             steps {
-//                 sh 'mvn test'
-//             }
-//             post {
-//                 always {
-//                     junit 'target/surefire-reports/*.xml'
-//                 }
-//             }
-//         }
     }
 }
