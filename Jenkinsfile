@@ -12,7 +12,7 @@ pipeline {
         stage('Build_jar_file') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'cp target/my-app-1.0-SNAPSHOT.jar $J_HOME/artifacts/'
+                sh 'cp target/my-app-1.0-SNAPSHOT.jar $J_HOME/artifacts/my-app-$build_number_auto.jar'
             }
         }
         stage('Create_Archive') { 
@@ -20,11 +20,5 @@ pipeline {
                 sh 'tar czf $J_HOME/artifacts/my-app-$build_number_auto.tar.gz target/my-app-1.0-SNAPSHOT.jar' 
             }            
         }
-//         stage('Create_Archive12') { 
-//             steps {
-//                 sh 'echo $J_HOME' 
-//             }            
-//         }
     }
 }
-// /var/jenkins_home/artifacts
