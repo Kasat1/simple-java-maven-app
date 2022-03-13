@@ -26,7 +26,7 @@ pipeline {
         success {
         echo "trigger adhoc pipline"
         build job: 'adhoc', parameters: 
-            [string(name: 'Temp', value: '$build_number_auto')]
+            [string(name: 'Temp', value: $build_number_auto)]
         }
     }
 }
