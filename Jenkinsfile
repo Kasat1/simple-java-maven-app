@@ -26,7 +26,7 @@ pipeline {
 //         }
         stage('Deliver') { 
             steps {
-                sh 'java -jar $J_HOME/artifacts/target/my-app-$build_number_auto.jar' 
+                sh 'java -jar $J_HOME/artifacts/target/my-app-1.0-SNAPSHOT.jar' 
             }
         }
 //         stage('Email') { 
