@@ -9,11 +9,11 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-//         stage('Build') {
-//             steps {
-//                 sh 'tar xvzf target/my-app-$BUILD_NUMBER.tar.gz'
-//             }
-//         }
+        stage('Unpack') {
+            steps {
+                sh 'tar xvzf target/my-app-$build_number_auto.tar.gz'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
