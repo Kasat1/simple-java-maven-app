@@ -8,12 +8,12 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
-    stages {
-        stage('Unpack') {
-            steps {
-                sh 'tar xvzf my-app.tar.gz'
-            }
-        }
+//     stages {
+//         stage('Unpack') {
+//             steps {
+//                 sh 'tar xvzf my-app.tar.gz'
+//             }
+//         }
         stage('Test') {
             steps {
                 sh 'mvn test'
