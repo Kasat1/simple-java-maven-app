@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Email') { 
             steps {
-              emailext body: '$BUILD_TAG is $currentResult', subject: 'FROM JENKINS', to: 'kasatka5507@yandex.ru'   
+              emailext body: 'The Result is GOOD =)', subject: 'FROM JENKINS', to: 'kasatka5507@yandex.ru'   
             }
         }
     }
