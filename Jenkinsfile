@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Create_Archive') { 
             steps {
-                sh 'tar czf /$JENKINS_HOME/artifacts/my-app-$build_number_auto.tar.gz target/my-app-1.0-SNAPSHOT.jar' 
+                sh 'tar czf $J_HOME/artifacts/my-app-$build_number_auto.tar.gz target/my-app-1.0-SNAPSHOT.jar' 
             }            
         }
         stage('Create_Archive12') { 
             steps {
-                sh 'echo $JENKINS_HOME' 
+                sh 'echo $J_HOME' 
             }            
         }
     }
