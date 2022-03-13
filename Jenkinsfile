@@ -21,4 +21,11 @@ pipeline {
             }            
         }
     }
+    post{
+        success {
+        echo "trigger adhoc pipline"
+        build job: 'adhoc', parametrs: 
+            [string(name: 'build_number_auto', value: '$BUILD_NUMBER')]
+        }
+    }
 }
