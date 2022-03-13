@@ -8,7 +8,7 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
-//     stages {
+     stages {
 //         stage('Unpack') {
 //             steps {
 //                 sh 'tar xvzf my-app.tar.gz'
