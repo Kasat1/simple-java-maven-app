@@ -11,7 +11,7 @@ pipeline {
      stages {
         stage('Unpack') {
             steps {
-                sh 'echo '$build_number_auto''
+                sh 'echo '$build_number_auto'
                 sh 'tar xvzf $J_HOME/artifacts/my-app-37.tar.gz --directory $J_HOME/artifacts/'
             }
         }
