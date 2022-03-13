@@ -11,7 +11,7 @@ pipeline {
      stages {
         stage('Unpack') {
             steps {
-                sh 'tar xvzf $J_HOME/artifacts/my-app-37.tar.gz $J_HOME/artifacts/my-app-$build_number_auto.jar'
+                sh 'tar xvzf $J_HOME/artifacts/my-app-37.tar.gz --directory $J_HOME/artifacts/'
             }
         }
 //         stage('Test') {
@@ -26,7 +26,7 @@ pipeline {
 //         }
         stage('Deliver') { 
             steps {
-                sh 'java -jar $J_HOME/artifacts/my-app-$build_number_auto.jar' 
+                sh 'java -jar $J_HOME/artifacts/target/my-app-$build_number_auto.jar' 
             }
         }
 //         stage('Email') { 
