@@ -9,24 +9,24 @@ pipeline {
         skipStagesAfterUnstable()
     }
      stages {
-//         stage('Unpack') {
-//             steps {
-//                 sh 'tar xvzf my-app.tar.gz'
-//             }
-//         }
-        stage('Test') {
+        stage('Unpack') {
             steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
+                sh 'tar xvzf $J_HOME/artifacts/my-app-$build_number_auto.tar.gz'
             }
         }
+//         stage('Test') {
+//             steps {
+//                 sh 'mvn test'
+//             }
+//             post {
+//                 always {
+//                     junit 'target/surefire-reports/*.xml'
+//                 }
+//             }
+//         }
         stage('Deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh' 
+                sh 'java -jar $J_HOME/artifacts/my-app-$build_number_auto.jar' 
             }
         }
 //         stage('Email') { 
