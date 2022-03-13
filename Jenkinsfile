@@ -9,11 +9,11 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-//         stage('Unpack') {
-//             steps {
-//                 sh 'tar xvzf target/my-app-$build_number_auto.tar.gz'
-//             }
-//         }
+        stage('Unpack') {
+            steps {
+                sh 'tar xvzf target/my-app-$TRIGGERED_BUILD_NUMBER_automated.tar.gz'
+            }
+        }
         stage('Test') {
             steps {
                 sh 'mvn test'
@@ -29,10 +29,10 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh' 
             }
         }
-        stage('Email') { 
-            steps {
-              emailext body: 'The Result is GOOD =)', subject: 'FROM JENKINS', to: 'kasatka5507@yandex.ru'   
-            }
-        }
+//         stage('Email') { 
+//             steps {
+//               emailext body: 'The Result is GOOD =)', subject: 'FROM JENKINS', to: 'kasatka5507@yandex.ru'   
+//             }
+//         }
     }
 }
