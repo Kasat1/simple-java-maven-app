@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Unpack') {
             steps {
-                sh 'tar xvzf target/my-app-$build_number_auto.tar.gz'
+                sh 'tar xvzf target/my-app.tar.gz'
             }
         }
         stage('Test') {
