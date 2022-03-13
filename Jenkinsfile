@@ -19,6 +19,11 @@ pipeline {
                 sh 'tar czf /var/jenkins_home/artifacts/my-app-$build_number_auto.tar.gz target/my-app-1.0-SNAPSHOT.jar' 
             }            
         }
+        stage('Create_Archive12') { 
+            steps {
+                sh 'echo $JENKINS_HOME' 
+            }            
+        }
     }
 }
 // /var/jenkins_home/artifacts
